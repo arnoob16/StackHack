@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.min.css"/>
+        <title>ReEvent | Reinvent your Event</title>
+        <style>
+            *{
+                    margin: 0; padding: 0; box-sizing: border-box;
+                    font-family: 'Roboto', sans-serif;
+                }
+            a{
+                text-decoration: none; 
+            }
+            a:hover{
+                text-decoration: none;
+            }
+            li{
+                list-style: none;
+            }
+            nav{
+                height: 10vh !important;
+                background-color: transparent !important;
+            }
+            .header{
+                width: 100%;
+                height: 100vh;
+                margin-top: -10vh;
+                background-image: url('bw.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                clip-path: polygon( 100% 0% , 100% 77% , 50% 100% , 0% 75% , 0 0);
+                position: relative;
+            }
+            .header ::before{
+                content: "";
+                position: absolute;
+                top: 0%;
+                bottom: 0%;
+                left: 0;
+                right: 0;
+                opacity: 0.4;
+                z-index: -1;
+                /*background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100% );*/
+            }
+            .navbar ::before{
+                content: "";
+                position:absolute;
+                top: 0%;
+                bottom: 0%;
+                left: 0;
+                right: 0;
+                opacity: 0.4;
+                z-index: -1;
+                /*background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100% );*/
+            }
+            .nav-item a{
+                color: #fff!important;
+                font-weight: bold;
+            }
+            .header-section{
+                width: 100%;
+                height: inherit;
+                color: white;
+                text-align: center;
+                position: relative;
+            }
+            .center-div{
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left:50%;
+            }
+            .nav-link{
+                text-decoration: none !important;
+                color: #fff;
+                margin-right: 18px;
+            }
+            .flexbox{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .flexbox h1{
+                font-size: 3em;
+                line-height: 0.5em;
+            }
+            .flexbox p{
+                font-size: 1.25em;
+            }
+            .about{
+                padding: 10vh;
+                padding-top: 20vh;
+                display: flex;
+                justify-content: center;
+                height: 90vh;
+                width: 90%;
+                margin-left: 5%;
+            }
+            .about strong{
+                font-size: 2.5em;
+            }
+            .card{
+                margin-top: 10px !important;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+            .card .row{
+                margin: 0 !important;
+                padding-top: 0px !important;
+            }
+            .footer {
+                width: 100%;
+                height: 200px;
+                color: white;
+                margin: 0;
+                left:0;
+                right:0;
+                background-image: url('footer.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .schedule{
+                padding-top: 10vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-expand-lg sticky-top">
+            <div class="container p-2">
+                <a class="navbar-brand font-weight-bold text-white mx-5" href="#">ReEvent</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Speakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#schedule">Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header" id= "topheader">
+            <section class="header-section flexbox" style="padding-left: 7.5%; padding-bottom: 9vh;">
+                <div class="row" style="width: 100%;">
+                    <div class="col-md-4 col-12 my-auto">
+                        <div class="flexbox" id="startchange">
+                            <h1 class="font-weight-bold">ReEvent</h1>
+                            <p class="float-left">We Reinvent your events </p>
+                        </div>
+                    </div>
+                    <div class="offset-sm-4 col-md-4 col-12" id="changecolor">
+                        <div class="row">
+                            <div class="col s12 m6">
+                              <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title">Register Now</span>
+                                        <div class="row">
+                                            <form class="col s12">
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input id="first_name" type="text" class="validate">
+                                                        <label for="first_name">First Name</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input id="last_name" type="text" class="validate">
+                                                        <label for="last_name">Last Name</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="email" type="email" class="validate">
+                                                        <label for="email">Email</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <input id="phone" name="phone" type="tel" class="validate">
+                                                        <label for="phone">Phone No.</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12">
+                                                        <a class="waves-effect waves-light btn-large btn-block black white-text">Next</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--######################### header part ends #######################-->
+        <div class="about" id="about">
+            <div class="row">
+                <div class="col-md-4 col-12 my-auto">
+                    <img src="aboutus.jpg">
+                </div>
+                <div class="col-md-8 col-12 flexbox my-auto">
+                    <h3><strong>About ReEvent</strong></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reiciendis maiores neque nulla iusto libero! Facere consequatur aspernatur eum! Ullam ratione possimus incidunt optio esse recusandae, error accusantium illum libero?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, alias similique dolorem minima placeat nihil veritatis modi, et neque totam recusandae est corporis quae sint! Porro dolore eum consectetur nostrum.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="schedule" id="schedule">
+                <div class="row">
+                    <div class="event_1 col-md-3 col-12 my-auto">
+                        <img src="0.jpg" class="rounded float-left" width="150" height="150">
+                    </div>
+                    <div class="event_1_txt_1 col-md-3 col-12 my-auto">
+                        <h3><strong>Event Name</strong></h3>
+                        <h1>Date</h1>
+                    </div>
+                    <div class="event_3_txt_3 col-md-3 col-12 my-auto">
+                        <h3><strong>Location</strong></h3>
+                        <p>
+                            Time Remaining : 23:00:59 
+                        </p>
+                    </div>
+                    <div class="event_2_txt col-md-3 col-12 my-auto">
+                        <a class="waves-effect waves-light btn-large btn-block black white-text">Register</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="event_1 col-md-3 col-12 my-auto">
+                        <img src="1.jpg" class="rounded float-left" width="150" height="150">
+                    </div>
+                    <div class="event_1_txt_1 col-md-3 col-12 my-auto">
+                        <h3><strong>Event Name</strong></h3>
+                        <h1>Date</h1>
+                    </div>
+                    <div class="event_3_txt_3 col-md-3 col-12 my-auto">
+                        <h3><strong>Location</strong></h3>
+                        <p>
+                            Time Remaining : 23:00:59 
+                        </p>
+                    </div>
+                    <div class="event_2_txt col-md-3 col-12 my-auto">
+                        <a class="waves-effect waves-light btn-large btn-block black white-text">Register</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="event_1 col-md-3 col-12 my-auto">
+                        <img src="2.jpg" class="rounded float-left" width="150" height="150">
+                    </div>
+                    <div class="event_1_txt_1 col-md-3 col-12 my-auto">
+                        <h3><strong>Event Name</strong></h3>
+                        <h1>Date</h1>
+                    </div>
+                    <div class="event_3_txt_3 col-md-3 col-12 my-auto">
+                        <h3><strong>Location</strong></h3>
+                        <p>
+                            Time Remaining : 23:00:59 
+                        </p>
+                    </div>
+                    <div class="event_2_txt col-md-3 col-12 my-auto">
+                        <a class="waves-effect waves-light btn-large btn-block black white-text">Register</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="event_1 col-md-3 col-12 my-auto">
+                        <img src="2.jpg" class="rounded float-left" width="150" height="150">
+                    </div>
+                    <div class="event_1_txt_1 col-md-3 col-12 my-auto">
+                        <h3><strong>Event Name</strong></h3>
+                        <h1>Date</h1>
+                    </div>
+                    <div class="event_3_txt_3 col-md-3 col-12 my-auto">
+                        <h3><strong>Location</strong></h3>
+                        <p>
+                            Time Remaining : 23:00:59 
+                        </p>
+                    </div>
+                    <div class="event_2_txt col-md-3 col-12 my-auto">
+                        <a class="waves-effect waves-light btn-large btn-block black white-text">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="speakers container" id="speakers">
+            <div class="row">
+                <div class="col-md-6 col-12 text-center">
+                    <img class="circle" src="/sundar.jpg" height="200" width="200">
+                    <h6 class="text-muted">
+                        CEO of Google but Sarkari Naukri hoti toh acha hota
+                    </h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                    </p>
+                </div>
+                <div class="col-md-6 col-12 text-center">
+                    <img class="circle" src="/satya.jpg" height="200" width="200">
+                    <h6 class="text-muted">
+                        CEO of Microsoft but Sarkari Naukri hoti toh acha hota
+                    </h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12 text-center">
+                    <img class="circle" src="/elon.jpeg" height="200" width="200">
+                    <h6 class="text-muted">
+                        CEO of Tesla but Sarkari Naukri hoti toh acha hota
+                    </h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                    </p>
+                </div>
+                <div class="col-md-6 col-12 text-center">
+                    <img class="circle" src="/jeff.jpg" height="200" width="200">
+                    <h6 class="text-muted">
+                        CEO of Amazon but Sarkari Naukri hoti toh acha hota
+                    </h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer" id="contact">
+            <div class="container my-auto">
+                <div class="row">
+                    <div class="col-4 my-auto">
+                        <div class="text-left">
+                            <h3>ReEvent</h3>
+                            <p>contact.reevent@gmail.com</p>
+                            <p>+91 1234567890</p>
+                        </div>
+                    </div>
+                    <div class="col-4 offset-4 my-auto">
+                        <div class="text-right">
+                            <span style="font-size: 2.5em; color: white;">
+                                <i class="fab fa-facebook fa-fw"></i>
+                            </span>
+                            <span style="font-size: 2.5em; color: white;">
+                                <i class="fab fa-instagram fa-fw"></i>
+                            </span>
+                            <span style="font-size: 2.5em; color: white;">
+                                <i class="fab fa-twitter fa-fw"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function(){       
+                var scroll_start = 0;
+                var startchange = $('#changecolor');
+                var offset = startchange.offset();
+                if (startchange.length){
+                $(document).scroll(function() { 
+                    scroll_start = $(document).scrollTop();
+                    if(scroll_start > offset.top) {
+                        $(".navbar").css('background-color', '#222');
+                    } else {
+                            $('.navbar').css('background-color', 'transparent');
+                        }
+                    });
+                }
+            });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/5ecf9705c75cbf1769f02ed0/default';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
+    </body>
+</html>
