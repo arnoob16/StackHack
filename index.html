@@ -13,7 +13,13 @@
             *{
                     margin: 0; padding: 0; box-sizing: border-box;
                     font-family: 'Roboto', sans-serif;
-                }
+            }
+            body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
             a{
                 text-decoration: none; 
             }
@@ -25,6 +31,7 @@
             }
             nav{
                 height: 10vh !important;
+                width: 100% !important;
                 background-color: transparent !important;
             }
             .header{
@@ -96,11 +103,9 @@
                 font-size: 1.25em;
             }
             .about{
-                padding: 10vh;
-                padding-top: 20vh;
+                padding-top: 12vh;
                 display: flex;
                 justify-content: center;
-                height: 90vh;
                 width: 90%;
                 margin-left: 5%;
             }
@@ -111,6 +116,7 @@
                 margin-top: 10px !important;
                 background-color: #f0f0f0;
                 color: #333;
+                width: 22.5rem !important;
             }
             .card .row{
                 margin: 0 !important;
@@ -118,14 +124,19 @@
             }
             .footer {
                 width: 100%;
-                height: 250px;
+                height: fit-content;
                 color: white;
                 margin: 0;
                 left:0;
                 right:0;
-                background-image: url('footer.jpg');
+                background-image: url('footer.jpg') ;
                 background-repeat: no-repeat;
                 background-size: cover;
+            }
+            .footer h5{
+                font-weight: bold;
+                margin-top: 5% !important;
+                left: 75;
             }
             .schedule{
                 padding-top: 10vh;
@@ -135,26 +146,36 @@
              opacity: 0.9;
              width: 50px;
              height: 50px;
-             background: black;
-             bottom: 40px;
-             right: 50px;
-            border-radius: 50%;
+             background: #222;
+             bottom: 100px;
+             right: 27.5px;
+             border-radius: 50%;
              text-decoration: none;
              text-align: center; line-height: 50px;
              color: white;
              font-size: 22px;
            }
+           .gotopbtn:hover{
+               color: white;
+           }
             .text-left{
-         padding: 50px;
-       }
+                padding: 0% 3.5% 0% 2%;
+            }
+            .navbar-toggler-icon :active {
+                background-color: transparent !important;
+            }
+            .navbar-toggler[aria-expanded=true] .navbar-toggler-icon{
+                background-color: transparent;
+                background-image: #222;
+            }
         </style>
     </head>
     <body>
-        <div class="navbar navbar-expand-lg sticky-top">
+        <div class="navbar navbar-expand-lg sticky-top w-100" >
             <div class="container p-2">
-                <a class="navbar-brand font-weight-bold text-white mx-5" href="#">ReEvent</a>
+                <a class="navbar-brand font-weight-bold text-white mx-5 d-none d-sm-block" href="#">ReEvent</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
@@ -162,16 +183,16 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Speakers</a>
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#schedule">Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" href="#speakers">Speakers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
+                            <a class="nav-link" href="#shop">Shop</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
@@ -261,17 +282,17 @@
                     <div class="col-md-3 col-12 text-center">
                         <img class="rounded my-auto" src="0.jpg">
                     </div>
-                    <div class="col-md-3 col-12 my-auto">
+                    <div class="col-md-3 col-12 my-auto text-center">
                         <h3>Apocalypse</h3>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                         <h4>27th June, 2020.</h4>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                        <h5>Bengaluru, India.</h5>
                         <p>5:30pm</p>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                    <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
@@ -280,17 +301,17 @@
                     <div class="col-md-3 col-12 text-center">
                         <img class="rounded my-auto" src="1.jpg">
                     </div>
-                    <div class="col-md-3 col-12 my-auto">
+                    <div class="col-md-3 col-12 my-auto text-center">
                         <h3>Tech Fest</h3>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                         <h4>5th September, 2020.</h4>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                         <h5>Chennai, India.</h5>
                         <p>6:30pm</p>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                     <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
 
                     </div>
@@ -301,16 +322,16 @@
                         <img class="rounded my-auto" src="2.jpg">
                     </div>
                     <div class="col-md-3 col-12 my-auto">
-                        <h3>Cultural Fest</h3>
+                        <h3 class="text-center">Cultural Fest</h3>
                     </div>
                     <div class="col-md-2 col-12 my-auto">
-                        <h4>8th March, 2021.</h4>
+                        <h4 class="text-center">8th March, 2021.</h4>
                     </div>
                     <div class="col-md-2 col-12 my-auto">
-                        <h5>Mumbai, India.</h5>
-                        <p>6:00pm</p>
+                        <h5 class="text-center">Mumbai, India.</h5>
+                        <p class="text-center">6:00pm</p>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                           <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
@@ -320,16 +341,16 @@
                         <img class="rounded my-auto" src="0.jpg">
                     </div>
                     <div class="col-md-3 col-12 my-auto">
-                        <h3>Crio Dev Sprint</h3>
+                        <h3 class="text-center">Crio Dev Sprint</h3>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                         <h4>15th June, 2020.</h4>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
-                          <h5>New Delhi, India.</h5>
-                        <p>6:00pm</p>
+                    <div class="col-md-2 col-12 my-auto text-center">
+                        <h5 class="text-center">New Delhi, India.</h5>
+                        <p class="text-center">6:00pm</p>
                     </div>
-                    <div class="col-md-2 col-12 my-auto">
+                    <div class="col-md-2 col-12 my-auto text-center">
                        <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
@@ -344,58 +365,63 @@
              <br>
           <br>
             <div class="row">
-                
-                <div class="col-md-5 col-12 text-center">
-                    <img class="circle" src="sundar.jpg" height="175" width="175">
-                    <h6 class=" ">
+                <div class="col-md-6 col-12 text-center " style="margin-top: 2% !important;">
+                    <img class="circle mb-3" src="sundar.jpg" height="175" width="175">
+                    <h6 class="mb3">
                         CEO of Google but Sarkari Naukri hoti toh
                      </h6>
-                    <p class="text-left">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
-                    </p>
+                     <div class="w-75 mx-auto">
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                        </p>
+                     </div>
                 </div>
-                <div class="col-md-5 offset-2 col-12 text-center">
-                    <img class="circle" src="satya.jpg" height="175" width="175">
-                    <h6 class=" ">
+                <div class="col-md-6 col-12 text-center"  style="margin-top: 2% !important;">
+                    <img class="circle mb-3" src="satya.jpg" height="175" width="175">
+                    <h6 class="mb3">
                         CEO of Microsoft but Sarkari Naukri hoti toh
                      </h6>
-                    <p class="text-left">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
-                    </p>
+                    <div class="w-75 mx-auto">
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                        </p>
+                     </div>
                 </div>
-            </div>
-            <div class="row" style="margin-top: 5% !important;">
-                <div class="col-md-5 col-12 text-center">
-                    <img class="circle" src="elon.jpeg" height="175" width="175">
-                    <h6 class=" ">
+                <div class="col-md-6 col-12 text-center" style="margin-top: 2% !important;">
+                    <img class="circle mb-3" src="elon.jpeg" height="175" width="175">
+                    <h6 class="mb3">
                         CEO of Tesla but Sarkari Naukri hoti toh
                      </h6>
-                    <p class="text-left">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
-                    </p>
+                    <div class="w-75 mx-auto">
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                        </p>
+                     </div>
                 </div>
-                <div class="col-md-5 offset-2 col-12 text-center">
-                    <img class="circle" src="jeff.jpg" height="175" width="175">
-                    <h6 class=" ">
+                <div class="col-md-6 col-12 text-center"  style="margin-top: 2% !important;">
+                    <img class="circle mb-3" src="jeff.jpg" height="175" width="175">
+                    <h6 class="mb3">
                         CEO of Amazon but Sarkari Naukri hoti toh
                      </h6>
-                    <p class="text-left">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
-                    </p>
+                    <div class="w-75 mx-auto">
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat laboriosam exercitationem tempore rerum assumenda? Non laudantium optio aperiam assumenda, unde quam doloremque mollitia. Corrupti assumenda optio numquam, repellat dignissimos recusandae.
+                        </p>
+                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer" id="contact">
-            <div class="container my-auto">
+        <div class="footer" id="contact" style="margin-top: 5% !important; padding: 50px;">
+            <div class="container">
                 <div class="row">
-                    <div class="col-4 my-auto">
+                    <div class="col-4">
                         <div class="text-left">
                             <h3>ReEvent</h3>
-                            <p>contact.reevent@gmail.com</p>
-                            <p>+91 1234567890</p>
+                            <a href="mailto:contact.reevent@gmail.com" class="text-white">contact.reevent@gmail.com</a>
+                            <p>+91 9876543210</p>
                         </div>
                     </div>
-                    <div class="col-4 offset-4 my-auto">
+                    <div class="col-md-4 offset-md-4 col-12 my-auto">
                         <div class="text-right">
                             <span style="font-size: 3.5em; color: white;">
                                 <i class="fab fa-facebook fa-fw"></i>
@@ -409,9 +435,10 @@
                         </div>
                     </div>
                 </div>
-                
-                      <a class="gotopbtn"href="#"><i class="fas fa-arrow-up"></i></a>
-
+                <h5 class="text-center mt-5">
+                    All rights reserved by ReEvent. Copyright 2020.
+                </h5>
+                <a class="gotopbtn"href="#"><i class="fas fa-arrow-up"></i></a>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -427,8 +454,12 @@
                     scroll_start = $(document).scrollTop();
                     if(scroll_start > offset.top) {
                         $(".navbar").css('background-color', '#222');
+                        $(".navbar").addClass("navbar-dark");
+                        $(".navbar-brand").removeClass("d-none d-sm-block");
                     } else {
                             $('.navbar').css('background-color', 'transparent');
+                            $(".navbar-brand").addClass("d-none d-sm-block");
+                            $(".navbar").removeClass("navbar-dark");
                         }
                     });
                 }
