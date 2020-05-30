@@ -43,10 +43,10 @@
                 width: 100%;
                 height: 100vh;
                 margin-top: -10vh;
-                background-image: url('bw.jpg');
+                background-image: url('bw1.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
-                clip-path: polygon( 100% 0% , 100% 77% , 50% 100% , 0% 75% , 0 0);
+                clip-path: polygon( 0% 0%, 100% 0%, 100% 80%, 0% 100%);
                 position: relative;
             }
             .header ::before{
@@ -247,6 +247,14 @@
             .newsletter{
                 width:100%;
             }
+            
+            .register{
+      width: 30%;
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    transform: translateY(-50%);
+    }
 
         </style>
     </head>
@@ -282,7 +290,7 @@
             </div>
         </div>
         <div class="header" id= "topheader">
-            <section class="header-section flexbox" style="padding-left: 7.5%; padding-bottom: 9vh;">
+            <section class="header-section flexbox" style="padding-left: 8.5%; padding-bottom: 6vh;">
                 <div class="row" style="width: 100%;">
                     <div class="col-md-4 col-12 my-auto">
                         <div class="flexbox" id="startchange">
@@ -290,7 +298,10 @@
                             <p class="float-left">We Reinvent your events </p>
                         </div>
                     </div>
-                    <div class="offset-sm-4 col-md-4 col-12" id="changecolor">
+                    </div>
+            </section>
+        </div>
+                    <div class="offset-sm-4 col-md-4 col-12 register" id="changecolor">
                         <div class="row">
                             <div class="col s12 m6">
                               <div class="card">
@@ -332,9 +343,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
+                
         <!--######################### header part ends #######################-->
         <div class="about" id="about">
             <div class="row">
