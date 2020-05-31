@@ -5,21 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-       <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-       <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css> 
-       <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
-      <link rel="stylesheet" href="../lib/w3.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type ="text/css"href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css> 
         <title>ReEvent | Reinvent your Event</title>
         <style>
             *{
-                    margin: 0; padding: 0; box-sizing: border-box;
-                    font-family: 'Roboto', sans-serif;
+                margin: 0; padding: 0; box-sizing: border-box;
+                font-family: 'Roboto', sans-serif;
+            }
+            html{
+                max-width: 100%;
             }
             body{
+                max-width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -173,94 +171,121 @@
                 background-color: transparent;
                 background-image: #222;
             }
-           
-            
-       .heading p{
-       	font-size: 15px;
-       }
-
-      .heading{
-        width: 100%;
-        background-color: white;
-      }
-            pricing {
-      width: 100%;
-    }
-
-    .money {
-      font-size: 40px;
-      line-height: 1;
-    }
-
-    .card {
-      transition: 0.4s ease;
-    }
-
-    .card-header {
-      font-size: 1.6rem;
-      font-weight: bold;
-      background: white;
-    }
-
-    .card-body {
-      padding: 30px 0 !important;
-      background: white;
-    }
-
-    .card-body li {
-      margin: 10px, 0;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .card-footer {
-      background: white !important;
-      padding: 30px, 0 !important;
-    }
-
-    .card-footer a {
-      border: 1px solid #000;
-      border-radius: 100px;
-      margin: 0, 5px;
-      padding: 12px, 35px;
-      outline: none;
-      color: #000;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.4;
-      text-align: center;
-
-    }
-
-    .card-footer a:hover {
-      color: black;
-      background: white;
-      text-decoration: none;
-
-    }
-
-    .card:hover {
-      transform: translateY(-20px);
-    }
-     
-            .newsletter{
-                width:100%;
+            .heading p{
+            	font-size: 15px;
             }
-            
+            .heading{
+                width: 100%;
+                background-color: white;
+            }
+            .pricing {
+                width: 100%;
+            }
+            .money {
+                font-size: 40px;
+                line-height: 1;
+            }
+            #shop .card {
+                transition: 0.4s ease;
+            }
+            #shop .card-header {
+                font-size: 1.6rem;
+                font-weight: bold;
+                background: white;
+            }
+            #shop .card-body {
+                padding: 30px 0 !important;
+                background: white;
+            }
+            #shop .card-body li {
+                margin: 10px, 0;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            #shop .card-footer {
+                background: white !important;
+                padding: 30px, 0 !important;
+            }
+            #shop .card-footer a {
+                border: 1px solid #000;
+                border-radius: 100px;
+                margin: 0, 5px;
+                padding: 12px, 35px;
+                outline: none;
+                color: #000;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.4;
+                text-align: center;
+            }
+            #shop .card-footer a:hover {
+                color: black;
+                background: white;
+                text-decoration: none;
+            }
+            #shop .card:hover {
+                transform: translateY(-20px);
+            }
+            .newsletter{
+                width:100%;        
+            }        
             .register{
-      width: 30%;
-    position: absolute;
-    top: 70%;
-    right: 5%;
-    transform: translateY(-50%);
-    }
-
+                width: 30%;
+                position: absolute;
+                top: 70%;
+                right: 5%;
+                transform: translateY(-50%);
+            }
+            .file{
+                display: flex;
+                flex-direction: column;
+            }
+            .file .avatar{
+                size: 2em;
+            }
+            #color button :hover, #color :focus, #color button :active{
+                background-color: transparent !important;
+            }
+            #color a :focus {
+                background-color: white !important;
+            }
+            .dropdown-trigger{
+                color: #222 !important;
+                padding: 5px;
+                margin-left: -11px;
+                border: 1px solid #222;
+                min-width: 100px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            #ddName a :hover, #ddName a :focus, #ddName a :active{
+                background-color: transparent !important;
+            }
+            .dropdown-trigger span{
+                justify-content: end;
+                margin: 5px;
+                margin-right: 0 !important;
+            }
+            .dropdown-content a{
+                color: #222 !important;
+            }
+            .form-card{
+                min-height: 60vh !important;
+            }
+            #firstForm{
+                margin-bottom: 0% !important;
+            }
+            #nextForm{
+                display: none;
+            }
         </style>
     </head>
     <body>
         <div class="navbar navbar-expand-lg sticky-top w-100" >
-            <div class="container p-2">
+            <div class="container p-2" id="color">
                 <a class="navbar-brand font-weight-bold text-white mx-5 d-none d-sm-block" href="#">ReEvent</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -283,7 +308,7 @@
                             <a class="nav-link" href="#shop">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact Us</a>
+                            <a class="nav-link" href="#touch">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -298,51 +323,87 @@
                             <p class="float-left">We Reinvent your events </p>
                         </div>
                     </div>
-                    </div>
+                </div>
             </section>
         </div>
-                    <div class="offset-sm-4 col-md-4 col-12 register" id="changecolor">
-                        <div class="row">
-                            <div class="col s12 m6">
-                              <div class="card">
-                                <div class="card-content">
-                                    <span class="card-title text-center">Register Now</span>
+        <div class="offset-sm-4 col-md-4 col-12 register" id="changecolor">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card form-card">
+                    <div class="card-content" >
+                        <span class="card-title text-center">Register Now</span>
+                            <div class="row" id="register">
+                                <form class="col s12" id="register">
+                                    <span id="firstForm">
                                         <div class="row">
-                                            <form class="col s12">
-                                                <div class="row">
-                                                    <div class="input-field col s6">
-                                                        <input id="first_name" type="text" class="validate">
-                                                        <label for="first_name">First Name</label>
-                                                    </div>
-                                                    <div class="input-field col s6">
-                                                        <input id="last_name" type="text" class="validate">
-                                                        <label for="last_name">Last Name</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="email" type="email" class="validate">
-                                                        <label for="email">Email</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <input id="phone" name="phone" type="tel" class="validate">
-                                                        <label for="phone">Phone No.</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="input-field col s12">
-                                                        <a class="waves-effect waves-light btn-large btn-block black white-text">Next</a>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                            <div class="input-field col s6">
+                                                <input id="first_name" type="text" class="validate">
+                                                <label for="first_name">First Name</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input id="last_name" type="text" class="validate">
+                                                <label for="last_name">Last Name</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="email" type="email" class="validate">
+                                                <label for="email">Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="phone" name="phone" type="tel" class="validate">
+                                                <label for="phone">Phone No.</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <a class="waves-effect waves-light btn-large btn-block black white-text" onclick="genForm()">Next</a>
+                                            </div>
+                                        </div>    
+                                    </span>
+                                    <span id="nextForm">
+                                        <div class="row">
+                                            <div class="col s12">
+                                                <div class="input-field col s12">
+                                                    <span id="heading1"></span>
+                                                    <a class='dropdown-trigger btn-outline-black' href='#' id="ddName" data-target='dropdown1'><h5>Registeration Type</h5><span class="dropdown-toggle"></span> </a>
+                                                    <ul id='dropdown1' class='dropdown-content'>
+                                                        <li><a href="#!" id="o1" onclick="change('o1');">Self</a></li>
+                                                        <li><a href="#!" id="o2" onclick="change('o2');">Group</a></li>
+                                                        <li><a href="#!" id="o3" onclick="change('o3');">Corporate</a></li>
+                                                        <li><a href="#!" id="o4" onclick="change('o4');">Others</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input style= "margin-left: 0px;" id="ticketCount" type="text" placeholder ="No. of Tickets" class="validate">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12 file" id="file">
+                                                <div class="file-input">
+                                                    <h5>Upload ID for verification</h5>
+                                                    <input type="file" id="avatar" name="avatar" placeholder="Upload ID Card !important" accept="image/png, image/jpeg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <a class="waves-effect waves-light btn-large btn-block black white-text">Register Now</a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
                 
         <!--######################### header part ends #######################-->
         <div class="about" id="about">
@@ -354,9 +415,9 @@
                     <h3><strong>About ReEvent</strong></h3>
                     <br>
                     <p>
-                          ReEvent is a full service event management firm based in Chennai, India that was created by pairing together our passion for business and events. We bring a fresh, unique approach to the event management industry.
-                      Our team understands that a properly executed event can be leveraged to support an organization’s strategic vision, incorporated into a company’s marketing plan,
-                      or used to build networks and client loyalty.
+                            ReEvent is a full service event management firm based in Chennai, India that was created by pairing together our passion for business and events. We bring a fresh, unique approach to the event management industry.
+                            Our team understands that a properly executed event can be leveraged to support an organization’s strategic vision, incorporated into a company’s marketing plan,
+                            or used to build networks and client loyalty.
                     </p>
                 </div>
             </div>
@@ -385,7 +446,7 @@
                    <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
-               <hr>
+                <hr>
                 <div class="row">
                     <div class="col-md-3 col-12 text-center">
                         <img class="rounded my-auto" src="1.jpg">
@@ -448,35 +509,33 @@
         </div>
         <div class="speakers container" id="speakers">
             <br>
-          <br>
-          <br>
-              <h5 class="text-center">Event Speakers</h5>
-             <br>
-          <br>
+            <br>
+            <br>
+            <h5 class="text-center">Event Speakers</h5>
+            <br>
+            <br>
             <div class="row">
                 <div class="col-md-6 col-12 text-center " style="margin-top: 2% !important;">
                     <img class="circle mb-3" src="sundar.jpg" height="175" width="175">
                     <h4 class="mb3">
                         Mr.Sundar Pichai
-                     </h4>
-                     <p>CEO Alphabet Inc.</p>
-                     <div class="w-75 mx-auto">
+                    </h4>
+                    <p>CEO Alphabet Inc.</p>
+                    <div class="w-75 mx-auto">
                         <p class="text-left">
-                    He will be talking about Flutter and various other developments in the field of Android App Development.
-
+                            He will be talking about Flutter and various other developments in the field of Android App Development.
                         </p>
                      </div>
                 </div>
                 <div class="col-md-6 col-12 text-center"  style="margin-top: 2% !important;">
                     <img class="circle mb-3" src="satya.jpg" height="175" width="175">
-                   <h4 class="mb3">
-                      Mr.Satya Nadella
+                    <h4 class="mb3">
+                        Mr.Satya Nadella
                     </h4>
-                     <p>CEO Microsoft Corp.</p>
+                    <p>CEO Microsoft Corp.</p>
                     <div class="w-75 mx-auto">
                         <p class="text-left">
-                   He will be talking about Cloud storage solutions and use of tech in enhancing Workplace Experience.
-
+                            He will be talking about Cloud storage solutions and use of tech in enhancing Workplace Experience.
                         </p>
                      </div>
                 </div>
@@ -488,133 +547,114 @@
                      <p>CEO Tesla Inc.</p>
                     <div class="w-75 mx-auto">
                         <p class="text-left">
-                      He will be talking about the future of Self Driven Cars and various other advancements in the field of Automobile.
-
+                            He will be talking about the future of Self Driven Cars and various other advancements in the field of Automobile.
                         </p>
-                     </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-12 text-center"  style="margin-top: 2% !important;">
                     <img class="circle mb-3" src="jeff.jpg" height="175" width="175">
-                     <h4 class="mb3">
-                      Mr. Jeff Bezos
+                    <h4 class="mb3">
+                        Mr. Jeff Bezos
                     </h4>
                     <p>CEO Amazon.com</p>
                     <div class="w-75 mx-auto">
                         <p class="text-left">
-                  He will be talking about tech. in the E-commerce sector and how it will transform our daily lives.
-
+                            He will be talking about tech. in the E-commerce sector and how it will transform our daily lives.
                         </p>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
-       <section class="pricing" id class="pricingdiv">
-    <br>
-
-    <br>
-    <br>
-    <h5 class="text-center">
-      Event Pricing
-    </h5>
-    <br>
-    <br>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-12">
-          <div class="card text-center">
-            <div class="card-header"><i class="fas fa-paper-plane"></i> <br>Basic</div>
-            <div class="card-body">
-              <li>₹ <span class="money">399</span>/month</li>
-              <li> 1 person seat </li>
-              <li> Free Tshirt </li>
-              <li> Bufay Diner </li>
-              <li> Unlimited Speech listening </li>
-
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-dark">Purchase</button>
-            </div>
-          </div>
-
-
-        </div>
-        <div class="col-lg-4 col-12">
-          <div class="card text-center">
-            <div class="card-header"> <i class="fas fa-plane"></i> <br>Plus</div>
-            <div class="card-body">
-              <li>₹ <span class="money">699</span>/month</li>
-              <li> 3 person seat </li>
-              <li> Free Tshirt </li>
-              <li> Bufay Diner </li>
-              <li> Unlimited Speech listening </li>
-
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-dark">Purchase</button>
-            </div>
-          </div>
-
-
-        </div>
-        <div class="col-lg-4 col-12">
-          <div class="card text-center">
-            <div class="card-header"><i class="fas fa-rocket"></i> <br>Pro</div>
-            <div class="card-body">
-              <li>₹ <span class="money">999</span>/month</li>
-              <li> 5 person seat </li>
-              <li> Free Tshirt </li>
-              <li> Bufay Diner </li>
-              <li> Unlimited Speech listening </li>
-
-            </div>
-            <div class="card-footer">
-              <button type="button" class="btn btn-dark">Purchase</button>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-
-    </div>
-
-
-    </div>
-    </div>
-  </section>
-
-
-  
-  <div class="newsletter">
-    <br>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-md-6 offset-md-3 col-12 newsletter-main bg-white p-5">
-        <div class="row text-center">
-          <div class="col-md-12 col-12 text-center heading">
-
-            <h2 class="mb-3 mt-3">Let's get in touch!</h2>
-            <p class="text-secondary">Stay updated on our news and events! Sign up to receive our newsletter.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-8 offset-md-2 col-12 text-center heading">
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
-              </div>
-              <button type="submit" class="btn btn-dark form-control rounded-0"><strong>SUBSCRIBE</strong></button>
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+       <section class="pricing pricingdiv" id="shop">
+        <br>
+        <br>
+        <br>
+        <h5 class="text-center">
+            Event Pricing
+          </h5>
+          <br>
+          <br>
+          <br>
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <i class="fas fa-paper-plane"></i>
+                            <br>
+                            Basic
+                        </div>
+                        <div class="card-body">
+                            <li>₹ <span class="money">399</span>/month</li>
+                            <li> 1 person seat </li>
+                            <li> Free Tshirt </li>
+                            <li> Bufay Diner </li>
+                            <li> Unlimited Speech listening </li>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-dark">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card text-center">
+                        <div class="card-header"> <i class="fas fa-plane"></i> <br>Plus</div>
+                        <div class="card-body">
+                            <li>₹ <span class="money">699</span>/month</li>
+                            <li> 3 person seat </li>
+                            <li> Free Tshirt </li>
+                            <li> Bufay Diner </li>
+                            <li> Unlimited Speech listening </li>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-dark">Purchase</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="card text-center">
+                        <div class="card-header"><i class="fas fa-rocket"></i> <br>Pro</div>
+                            <div class="card-body">
+                                <li>₹ <span class="money">999</span>/month</li>
+                                <li> 5 person seat </li>
+                                <li> Free Tshirt </li>
+                                <li> Bufay Diner </li>
+                                <li> Unlimited Speech listening </li>
         
+                            </div>
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-dark">Purchase</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="newsletter">
+            <br>
+            <br>
+            <br>
+            <div class="row" id="touch" style="padding-top: 11vh !important;">
+                <div class="col-md-6 offset-md-3 col-12 newsletter-main bg-white p-5">
+                    <div class="row text-center">
+                        <div class="col-md-12 col-12 text-center heading"> 
+                            <h2 class="mb-3 mt-3">Let's get in touch!</h2>
+                            <p class="text-secondary">Stay updated on our news and events! Sign up to receive our newsletter.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 col-12 text-center heading">
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address">
+                                </div>
+                                <button type="submit" class="btn btn-dark form-control rounded-0"><strong>SUBSCRIBE</strong></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
         <div class="footer" id="contact" style="margin-top: 5% !important; padding: 50px;">
             <div class="container">
                 <div class="row">
@@ -648,7 +688,41 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
+            $('.dropdown').dropdown();
+        </script>
+        <script>
+            M.AutoInit();
+            $(document).ready(function(){
+                $('select').formSelect();
+            });
+            function genForm(){
+                $("#firstForm").css("display","none");
+                $("#nextForm").css("display","block");
+            }
+            function change(id){
+                console.log(id);
+                id= "#"+id;
+                console.log(id);
+                val = document.querySelector(id).innerHTML;
+                console.log(document.querySelector("#ddName"));
+                document.querySelector("#ddName").innerHTML = val;
+                console.log(val);
+                document.querySelector("#heading1").innerHTML = "<h5 style= \"margin-left: -12px;\">Registeration Type</h5>"
+                console.log();
+                if(val === "Self"){
+                    $("#ticketCount").attr({
+                        "disabled": true,
+                        "value" : "1"
+                    });
+                    $("#dropdown1").attr("disabled", true);
+                }
+                else{
+                    $("#tickets").css("margin-left: 0px !important");
+                    document.querySelector("#ticketCount").innerHTML = "<input style= \"margin-left: -8px;\" id=\"ticketCount\" type=\"text\" placeholder =\"No. of Tickets\" class=\"validate\">";
+                }
+            }
             $(document).ready(function(){       
                 var scroll_start = 0;
                 var startchange = $('#changecolor');
@@ -669,7 +743,6 @@
                 }
             });
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
