@@ -247,6 +247,7 @@
             #color button :hover, #color :focus, #color button :active{
                 background-color: transparent !important;
             }
+
             #color a :focus {
                 background-color: white !important;
             }
@@ -263,6 +264,10 @@
             }
             #ddName a :hover, #ddName a :focus, #ddName a :active{
                 background-color: transparent !important;
+            }
+            #register input :hover, #register input :focus, #register input :active{
+                color: #222 !important;
+                border-bottom: #222 !important;
             }
             .dropdown-trigger span{
                 justify-content: end;
@@ -394,7 +399,10 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <a class="waves-effect waves-light btn-large btn-block black white-text">Register Now</a>
-                                            </div>
+                                                <h6 class="text-center" style="margin-top: 5px !important;">
+                                                    <a class="text-center mt-3" onclick="goBack();" style="cursor: pointer;">Go Back to Previous</a>
+                                                </h6>
+                                            </div><br>
                                         </div>
                                     </span>
                                 </form>
@@ -425,7 +433,7 @@
 
         <div class="container" style="width: 90% !important;">
             <div class="schedule" id="schedule">
-                <h5 class="text-center">Event Schedule</h5>
+                <h4 class="text-center"> <strong>Event Schedule</strong></h4>
                 <br>
                 <br>
                 <div class="row">
@@ -511,7 +519,7 @@
             <br>
             <br>
             <br>
-            <h5 class="text-center">Event Speakers</h5>
+            <h4 class="text-center"><strong>Event Speakers</strong></h4>
             <br>
             <br>
             <div class="row">
@@ -700,6 +708,10 @@
             function genForm(){
                 $("#firstForm").css("display","none");
                 $("#nextForm").css("display","block");
+            }
+            function goBack(){
+                $("#nextForm").css("display","none");
+                $("#firstForm").css("display","block");
             }
             function change(id){
                 console.log(id);
