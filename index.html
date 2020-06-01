@@ -12,12 +12,14 @@
             *{
                 margin: 0; padding: 0; box-sizing: border-box;
                 font-family: 'Roboto', sans-serif;
+                box-sizing: border-box;
             }
             html{
                 max-width: 100%;
             }
             body{
                 max-width: 100%;
+                background-color: #fafafa;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -286,6 +288,30 @@
             #nextForm{
                 display: none;
             }
+            .modal{
+                width: 30% !important;
+                background-color: #f0f0f0;
+                height: fit-content;
+            }
+            @media only screen and (max-width: 576px) {
+                .modal{
+                    width: 75% !important;
+                }
+            }
+            .preview{
+                padding: 15px;
+                font-family: Helvetica sans-serif;
+                line-height: 2em;
+                font-size: larger;
+            }
+            .jaadu{
+                height: 70vh;
+                margin-top: -65vh;
+                width: 90% !important;
+            }
+            .jaadu h1{
+                font-size: 3em;
+            }
         </style>
     </head>
     <body>
@@ -320,100 +346,130 @@
             </div>
         </div>
         <div class="header" id= "topheader">
-            <section class="header-section flexbox" style="padding-left: 8.5%; padding-bottom: 6vh;">
-                <div class="row" style="width: 100%;">
-                    <div class="col-md-4 col-12 my-auto">
-                        <div class="flexbox" id="startchange">
-                            <h1 class="font-weight-bold">ReEvent</h1>
-                            <p class="float-left">We Reinvent your events </p>
+        </div>
+        <!--######################### header part ends #######################-->
+        <div class="jaadu container" id="changecolor">
+            <div class="row">
+                <div class="col-md-4 col-12">
+                    <h1 class="text-white"><strong>ReEvent</strong></h1>
+                    <h5 class="text-white">We reinvent your Events</h5>
+                </div>
+                <div class="col-md-4 offset-md-4 col-12">
+                    <div class="card form-card">
+                      <div class="card-content" >
+                          <span class="card-title text-center">Register Now</span>
+                              <div class="row" id="register">
+                                  <form class="col s12" id="register">
+                                      <span id="firstForm">
+                                          <div class="row">
+                                              <div class="input-field col s6">
+                                                  <input id="first_name" type="text" class="validate">
+                                                  <label for="first_name">First Name</label>
+                                              </div>
+                                              <div class="input-field col s6">
+                                                  <input id="last_name" type="text" class="validate">
+                                                  <label for="last_name">Last Name</label>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12">
+                                                  <input id="email" type="email" class="validate">
+                                                  <label for="email">Email</label>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12">
+                                                  <input id="phone" name="phone" type="tel" class="validate">
+                                                  <label for="phone">Phone No.</label>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12">
+                                                  <a class="waves-effect waves-light btn-large btn-block black white-text" onclick="genForm()">Next</a>
+                                              </div>
+                                          </div>    
+                                      </span>
+                                      <span id="nextForm">
+                                          <div class="row">
+                                              <div class="col s12">
+                                                  <div class="input-field col s12">
+                                                      <span id="heading1"></span>
+                                                      <a class='dropdown-trigger btn-outline-black' href='#' id="ddName" data-target='dropdown1'><h5>Registeration Type</h5><span class="dropdown-toggle"></span> </a>
+                                                      <ul id='dropdown1' class='dropdown-content'>
+                                                          <li><a href="#!" id="o1" onclick="change('o1');">Self</a></li>
+                                                          <li><a href="#!" id="o2" onclick="change('o2');">Group</a></li>
+                                                          <li><a href="#!" id="o3" onclick="change('o3');">Corporate</a></li>
+                                                          <li><a href="#!" id="o4" onclick="change('o4');">Others</a></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12">
+                                                  <input style= "margin-left: 0px;" id="ticketCount" type="text" placeholder ="No. of Tickets" class="validate">
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12 file" id="file">
+                                                  <div class="file-input">
+                                                      <h5>Upload ID for verification</h5>
+                                                      <input type="file" id="avatar" name="avatar" placeholder="Upload ID Card !important" accept="image/png, image/jpeg">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="input-field col s12">
+                                                  <a class="waves-effect waves-light btn-large btn-block black white-text modal-trigger" href="#modal1" onclick="genData()">Register Now</a>
+                                                  <h6 class="text-center" style="margin-top: 5px !important;">
+                                                      <a class="text-center mt-4" onclick="goBack();" style="cursor: pointer;">Go Back to Previous</a>
+                                                  </h6>
+                                              </div><br>
+                                          </div>
+                                      </span>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+        <div class="my-auto">
+            <div id="modal1" class="modal my-auto">
+                <div class="small">
+                    <h4 class="text-center m-2">Details Preview</h4>
+                    <div class="row ">
+                        <div class="col-12 my-auto bg-dark preview">
+                            <img class="mx-auto" id="idImg">
                         </div>
                     </div>
-                </div>
-            </section>
-        </div>
-        <div class="offset-sm-4 col-md-4 col-12 register" id="changecolor">
-            <div class="row">
-                <div class="col s12 m6">
-                  <div class="card form-card">
-                    <div class="card-content" >
-                        <span class="card-title text-center">Register Now</span>
-                            <div class="row" id="register">
-                                <form class="col s12" id="register">
-                                    <span id="firstForm">
-                                        <div class="row">
-                                            <div class="input-field col s6">
-                                                <input id="first_name" type="text" class="validate">
-                                                <label for="first_name">First Name</label>
-                                            </div>
-                                            <div class="input-field col s6">
-                                                <input id="last_name" type="text" class="validate">
-                                                <label for="last_name">Last Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="email" type="email" class="validate">
-                                                <label for="email">Email</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="phone" name="phone" type="tel" class="validate">
-                                                <label for="phone">Phone No.</label>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <a class="waves-effect waves-light btn-large btn-block black white-text" onclick="genForm()">Next</a>
-                                            </div>
-                                        </div>    
-                                    </span>
-                                    <span id="nextForm">
-                                        <div class="row">
-                                            <div class="col s12">
-                                                <div class="input-field col s12">
-                                                    <span id="heading1"></span>
-                                                    <a class='dropdown-trigger btn-outline-black' href='#' id="ddName" data-target='dropdown1'><h5>Registeration Type</h5><span class="dropdown-toggle"></span> </a>
-                                                    <ul id='dropdown1' class='dropdown-content'>
-                                                        <li><a href="#!" id="o1" onclick="change('o1');">Self</a></li>
-                                                        <li><a href="#!" id="o2" onclick="change('o2');">Group</a></li>
-                                                        <li><a href="#!" id="o3" onclick="change('o3');">Corporate</a></li>
-                                                        <li><a href="#!" id="o4" onclick="change('o4');">Others</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input style= "margin-left: 0px;" id="ticketCount" type="text" placeholder ="No. of Tickets" class="validate">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12 file" id="file">
-                                                <div class="file-input">
-                                                    <h5>Upload ID for verification</h5>
-                                                    <input type="file" id="avatar" name="avatar" placeholder="Upload ID Card !important" accept="image/png, image/jpeg">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <a class="waves-effect waves-light btn-large btn-block black white-text">Register Now</a>
-                                                <h6 class="text-center" style="margin-top: 5px !important;">
-                                                    <a class="text-center mt-4" onclick="goBack();" style="cursor: pointer;">Go Back to Previous</a>
-                                                </h6>
-                                            </div><br>
-                                        </div>
-                                    </span>
-                                </form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 preview">
+                                    <span class="mx-auto preview" id="idName"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-12 preview">
+                                    <span class="mx-auto preview" id="idMail"></span>
+                                </div>
+                                <div class="col-sm-6 col-12 preview">
+                                    <span class="mx-auto preview" id="idPhone"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-12 preview">
+                                    <span class="mx-auto preview" id="idCat"></span>
+                                </div>
+                                <div class="col-sm-6 col-12 preview">
+                                    <span class="mx-auto preview" id="idTcount"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-                
-        <!--######################### header part ends #######################-->
         <div class="about" id="about">
             <div class="row">
                 <div class="col-md-4 col-12 my-auto">
@@ -423,9 +479,9 @@
                     <h3><strong>About ReEvent</strong></h3>
                     <br>
                     <p>
-                            ReEvent is a full service event management firm based in Chennai, India that was created by pairing together our passion for business and events. We bring a fresh, unique approach to the event management industry.
-                            Our team understands that a properly executed event can be leveraged to support an organization’s strategic vision, incorporated into a company’s marketing plan,
-                            or used to build networks and client loyalty.
+                        ReEvent is a full service event management firm based in Chennai, India that was created by pairing together our passion for business and events. We bring a fresh, unique approach to the event management industry.
+                        Our team understands that a properly executed event can be leveraged to support an organization’s strategic vision, incorporated into a company’s marketing plan,
+                        or used to build networks and client loyalty.
                     </p>
                 </div>
             </div>
@@ -451,7 +507,7 @@
                         <p>5:30pm</p>
                     </div>
                     <div class="col-md-2 col-12 my-auto text-center">
-                   <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
+                        <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
                 <hr>
@@ -470,8 +526,7 @@
                         <p>6:30pm</p>
                     </div>
                     <div class="col-md-2 col-12 my-auto text-center">
-                    <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
-
+                        <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
                 <hr>
@@ -577,9 +632,9 @@
         <br>
         <br>
         <br>
-        <h5 class="text-center">
-            Event Pricing
-          </h5>
+        <h4 class="text-center">
+            <strong>Event Pricing</strong>
+          </h4>
           <br>
           <br>
           <br>
@@ -699,6 +754,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
             $('.dropdown').dropdown();
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
         </script>
         <script>
             M.AutoInit();
@@ -714,15 +772,10 @@
                 $("#firstForm").css("display","block");
             }
             function change(id){
-                console.log(id);
                 id= "#"+id;
-                console.log(id);
-                val = document.querySelector(id).innerHTML;
-                console.log(document.querySelector("#ddName"));
+                const val = document.querySelector(id).innerHTML;
                 document.querySelector("#ddName").innerHTML = val;
-                console.log(val);
-                document.querySelector("#heading1").innerHTML = "<h5 style= \"margin-left: -12px;\">Registeration Type</h5>"
-                console.log();
+                document.querySelector("#heading1").innerHTML = "<h5 style= \"margin-left: -12px;\">Registeration Type</h5>";
                 if(val === "Self"){
                     $("#ticketCount").attr({
                         "disabled": true,
@@ -734,6 +787,20 @@
                     $("#tickets").css("margin-left: 0px !important");
                     document.querySelector("#ticketCount").innerHTML = "<input style= \"margin-left: -8px;\" id=\"ticketCount\" type=\"text\" placeholder =\"No. of Tickets\" class=\"validate\">";
                 }
+            }
+            function genData(){
+                var fn = document.getElementById("first_name").value
+                var ln = document.getElementById("last_name").value
+                var name = fn + " " + ln
+                var phone = document.getElementById("phone").value
+                var email = document.getElementById("email").value
+                const val = document.getElementById("ddName").innerText
+                var tickets = document.getElementById("ticketCount").value
+                document.querySelector("#idName").innerHTML = name
+                document.querySelector("#idPhone").innerHTML = phone
+                document.querySelector("#idMail").innerHTML = email
+                document.querySelector("#idCat").innerHTML = val
+                document.querySelector("#idTcount").innerHTML = tickets
             }
             $(document).ready(function(){       
                 var scroll_start = 0;
