@@ -107,12 +107,11 @@
             .flexbox p{
                 font-size: 1.25em;
             }
-            .about{
+            .about .container{
                 padding-top: 12vh;
                 display: flex;
                 justify-content: center;
                 width: 90%;
-                margin-left: 5%;
             }
             .about strong{
                 font-size: 2.5em;
@@ -137,6 +136,9 @@
                 background-image: url('footer.jpg') ;
                 background-repeat: no-repeat;
                 background-size: cover;
+            }
+            .container{
+                box-sizing: border-box !important; 
             }
             .footer h5{
                 font-weight: bold;
@@ -297,12 +299,24 @@
                 .modal{
                     width: 75% !important;
                 }
+                .container {
+                    width: 90% !important;
+                }
+                .jadu{
+                    margin-top: 0vh !important;
+                }
+                #shop .card-footer {
+                    padding: 0 !important;
+                }
             }
+
             .preview{
                 padding: 15px;
                 font-family: Helvetica sans-serif;
                 line-height: 2em;
                 font-size: larger;
+            }
+            @media only screen and (max-width: 576px) {
             }
             .jaadu{
                 height: 70vh;
@@ -348,13 +362,13 @@
         <div class="header" id= "topheader">
         </div>
         <!--######################### header part ends #######################-->
-        <div class="jaadu container" id="changecolor">
+        <div class="jaadu" id="changecolor">
             <div class="row">
-                <div class="col-md-4 col-12">
+                <div class="col-md-4 col-12 pl-5">
                     <h1 class="text-white"><strong>ReEvent</strong></h1>
                     <h5 class="text-white">We reinvent your Events</h5>
                 </div>
-                <div class="col-md-4 offset-md-4 col-12">
+                <div class="offset-md-4 col-md-4 col-12 justify-content-center">
                     <div class="card form-card">
                       <div class="card-content" >
                           <span class="card-title text-center">Register Now</span>
@@ -438,7 +452,7 @@
                 <div class="small">
                     <h4 class="text-center m-2">Details Preview</h4>
                     <div class="row ">
-                        <div class="col-12 my-auto bg-dark preview">
+                        <div class="col-12 my-auto preview">
                             <img class="mx-auto" id="idImg">
                         </div>
                     </div>
@@ -470,12 +484,12 @@
                 </div>
             </div>
         </div>
-        <div class="about" id="about">
-            <div class="row">
-                <div class="col-md-4 col-12 my-auto">
-                    <img src="aboutus.jpg">
+        <div class="about container" id="about">
+            <div class="row" style="margin-top: 15vh;">
+                <div class="col-md-4 col-12">
+                    <img src="aboutus.jpg" class="mx-auto">
                 </div>
-                <div class="col-md-8 col-12 flexbox my-auto">
+                <div class="col-md-8 flexbox col-12 my-auto">
                     <h3><strong>About ReEvent</strong></h3>
                     <br>
                     <p>
@@ -487,9 +501,8 @@
             </div>
         </div>
 
-        <div class="container" style="width: 90% !important;">
-            <div class="schedule" id="schedule">
-                <h4 class="text-center"> <strong>Event Schedule</strong></h4>
+        <div class="container schedule" id="schedule" style="width: 90% !important;">
+            <h4 class="text-center"> <strong>Event Schedule</strong></h4>
                 <br>
                 <br>
                 <div class="row">
@@ -567,7 +580,6 @@
                        <button type="button" class="btn btn-outline-dark">Buy Ticket</button>
                     </div>
                 </div>
-            </div>
             <hr>
         </div>
         <div class="speakers container" id="speakers">
@@ -683,7 +695,6 @@
                                 <li> Free Tshirt </li>
                                 <li> Bufay Diner </li>
                                 <li> Unlimited Speech listening </li>
-        
                             </div>
                             <div class="card-footer">
                                 <button type="button" class="btn btn-dark">Purchase</button>
@@ -693,10 +704,7 @@
                 </div>
             </div>
         </section>
-        <div class="newsletter">
-            <br>
-            <br>
-            <br>
+        <div class="newsletter container">
             <div class="row" id="touch" style="padding-top: 11vh !important;">
                 <div class="col-md-6 offset-md-3 col-12 newsletter-main bg-white p-5">
                     <div class="row text-center">
