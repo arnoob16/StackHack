@@ -43,19 +43,19 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <img class="responsive-img" height="500" src="/public/login.jpg">
+                        <img class="responsive-img" height="500" src="login.jpg">
                     </div>
                     <div class="col-md-5 container">
                         <h2 class="mb-5">Login to ReEvent</h2>
-                        <form >
+                        <form action="/login" method="POST">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" class="form-control" placeholder="someone@example.com" id="loginMail" aria-describedby="email">
+                              <input type="email" name="email"class="form-control" placeholder="someone@example.com" id="loginMail" aria-describedby="email">
                               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                               <label for="exampleInputPassword1">Password</label>
-                              <input type="password" placeholder="************" class="form-control" id="loginPass">
+                              <input type="password" name="password" placeholder="************" class="form-control" id="loginPass">
                             </div>
                             <div class="lol">
                                 <div class="row">
