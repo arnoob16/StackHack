@@ -47,6 +47,9 @@
                     </div>
                     <div class="col-md-5 container">
                         <h2 class="mb-5">Login to ReEvent</h2>
+                        <% if (messages.error) { %>
+                            <%= messages.error %>
+                          <% } %>
                         <form action="/login" method="POST">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
