@@ -57,31 +57,31 @@ app.get("/",function(req,res){
     res.render("index.ejs");
 });
 
-app.post('/register', function(req,res){ 
-    var fname = req.body.fname; 
-    var lname = req.body.lname; 
-    var email =req.body.email; 
-    var phone =req.body.phone; 
-    var tickets =req.body.tickets;
-  
-    var data = { 
-        "first_name": fname, 
-        "last_name": lname, 
-        "email":email,  
-        "phone":phone,
-        "no_of_tickets":tickets 
-    } 
-db.collection('registration').insertOne(data,function(err, collection){ 
-        if (err) throw err; 
-        console.log("Record inserted Successfully"); 
-              
-    }); 
-          
-    return res.redirect('/'); 
-}) 
+var nameSchema = new mongoose.Schema({
+    fname: String,
+    lname: String,
+    email: String,
+    phone:Number,
+    tickets: Number 
+
+   });
+
+   var User = mongoose.model("User", nameSchema);
 
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
+});
+
+app.post("/register", (req, res) => {
+    var myData = new User(req.body);
+ myData.save()
+ .then(item => {
+ res.send("item saved to database");
+ })
+ .catch(err => {
+ res.status(400).send("unable to save to database");
+ });
+ 
 });
 
 app.post('/login',passport.authenticate('local', {
