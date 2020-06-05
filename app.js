@@ -10,11 +10,21 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const mongoose = require('mongoose'); 
+
+
+mongoose.connect('mongodb://localhost:27017/registration'); 
+var db=mongoose.connection; 
+db.on('error', console.log.bind(console, "connection error")); 
+db.once('open', function(callback){ 
+    console.log("connection succeeded"); 
+}) 
 
 
 
 const app = express();
+
 
 const intializePassport = require('./passport-config');
 intializePassport(
@@ -46,6 +56,29 @@ app.use(methodOverride('_method'));
 app.get("/",function(req,res){
     res.render("index.ejs");
 });
+
+app.post('/register', function(req,res){ 
+    var fname = req.body.fname; 
+    var lname = req.body.lname; 
+    var email =req.body.email; 
+    var phone =req.body.phone; 
+    var tickets =req.body.tickets;
+  
+    var data = { 
+        "first_name": fname, 
+        "last_name": lname, 
+        "email":email,  
+        "phone":phone,
+        "no_of_tickets":tickets 
+    } 
+db.collection('registration').insertOne(data,function(err, collection){ 
+        if (err) throw err; 
+        console.log("Record inserted Successfully"); 
+              
+    }); 
+          
+    return res.redirect('/'); 
+}) 
 
 app.get("/login",(req,res)=>{
     res.render("login.ejs");

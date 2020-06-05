@@ -384,27 +384,27 @@
                       <div class="card-content" >
                           <span class="card-title text-center">Register Now</span>
                               <div class="row" id="register">
-                                  <form class="col s12" id="register">
+                                  <form class="col s12" id="register" method="POST" action="/register">
                                       <span id="firstForm">
                                           <div class="row">
                                               <div class="input-field col s6">
-                                                  <input id="first_name" type="text" class="validate">
+                                                  <input id="first_name" type="text" name="fname"class="validate">
                                                   <label for="first_name">First Name</label>
                                               </div>
                                               <div class="input-field col s6">
-                                                  <input id="last_name" type="text" class="validate">
+                                                  <input id="last_name" type="text" name="lname" class="validate">
                                                   <label for="last_name">Last Name</label>
                                               </div>
                                           </div>
                                           <div class="row">
                                               <div class="input-field col s12">
-                                                  <input id="email" type="email" class="validate">
+                                                  <input id="email" type="email" name="email" class="validate">
                                                   <label for="email">Email</label>
                                               </div>
                                           </div>
                                           <div class="row">
                                               <div class="input-field col s12">
-                                                  <input id="phone" name="phone" type="tel" class="validate">
+                                                  <input id="phone" name="phone"name="phonename" type="tel" class="validate">
                                                   <label for="phone">Phone No.</label>
                                               </div>
                                           </div>
@@ -431,7 +431,7 @@
                                           </div>
                                           <div class="row">
                                               <div class="input-field col s12">
-                                                  <input style= "margin-left: 0px;" id="ticketCount" type="text" placeholder ="No. of Tickets" class="validate">
+                                                  <input style= "margin-left: 0px;" id="ticketCount" name="tickets" type="text" placeholder ="No. of Tickets" class="validate">
                                               </div>
                                           </div>
                                           <div class="row">
@@ -444,7 +444,7 @@
                                           </div>
                                           <div class="row">
                                               <div class="input-field col s12">
-                                                  <a class="waves-effect waves-light btn-large btn-block black white-text modal-trigger" href="#modal1" onclick="genData()">Register Now</a>
+                                                  <a class="waves-effect waves-light btn-large btn-block black white-text modal-trigger" value="Submit" href="#modal1" onclick="genData()">Register Now</a>
                                                   <h6 class="text-center" style="margin-top: 5px !important;">
                                                       <a class="text-center mt-4" onclick="goBack();" style="cursor: pointer;">Go Back to Previous</a>
                                                   </h6>
