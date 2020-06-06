@@ -2,8 +2,11 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
   }
 
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
+var cookieParser = require('cookie-parser')
 const request = require("request");
 const https = require("https");
 const bcrypt = require("bcrypt");
@@ -11,18 +14,14 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const methodOverride = require('method-override');
-const mongoose = require('mongoose'); 
-
-
-mongoose.connect('mongodb://localhost:27017/registration'); 
-var db=mongoose.connection; 
-db.on('error', console.log.bind(console, "connection error")); 
-db.once('open', function(callback){ 
-    console.log("connection succeeded"); 
-}) 
+var mongo = require("mongodb");
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/registerapp");
+var db = mongoose.connection;
 
 
 
+//Init App
 const app = express();
 
 
@@ -33,17 +32,29 @@ intializePassport(
      id => users.find(user => user.id === id)   
     )
 
-
+//Arrays
 const users = [];
+const registers = [];
+
+//View Engine
 
 app.set('view engine', 'ejs');
 
-
+//Set Static Folder
 app.use(express.static("public"));
-app.use(bodyParser.json());
 app.use(express.urlencoded({extended:false}));
+
+//Body Parser Middlewares
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(cookieParser());
+
+//Connect Flash
+
 app.use(flash());
+
+//Express Session
 app.use(session({
     secret:process.env.SESSION_SECRET,
     resave: false,
@@ -57,32 +68,12 @@ app.get("/",function(req,res){
     res.render("index.ejs");
 });
 
-var nameSchema = new mongoose.Schema({
-    fname: String,
-    lname: String,
-    email: String,
-    phone:Number,
-    tickets: Number 
-
-   });
-
-   var User = mongoose.model("User", nameSchema);
 
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 });
 
-app.post("/register", (req, res) => {
-    var myData = new User(req.body);
- myData.save()
- .then(item => {
- res.send("item saved to database");
- })
- .catch(err => {
- res.status(400).send("unable to save to database");
- });
- 
-});
+
 
 app.post('/login',passport.authenticate('local', {
     successRedirect: '/',
