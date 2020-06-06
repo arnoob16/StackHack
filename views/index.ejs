@@ -311,10 +311,13 @@
             }
 
             .preview{
-                padding: 15px;
+                padding: 2%;
                 font-family: Helvetica sans-serif;
-                line-height: 2em;
-                font-size: larger;
+                font-size: 1.25em !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
             @media only screen and (max-width: 576px) {
             }
@@ -471,26 +474,33 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-12 preview">
-                                    <span class="mx-auto preview" id="idName"></span>
+                                    <span class="mx-auto" id="idName"></span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 col-12 preview">
-                                    <span class="mx-auto preview" id="idMail"></span>
+                                    <h6>Email</h6>
+                                    <span class="mx-auto" id="idMail"></span>
                                 </div>
                                 <div class="col-sm-6 col-12 preview">
-                                    <span class="mx-auto preview" id="idPhone"></span>
+                                    <h6>Phone</h6>
+                                    <span class="mx-auto" id="idPhone"></span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 col-12 preview">
-                                    <span class="mx-auto preview" id="idCat"></span>
+                                    <h6>Category</h6>
+                                    <span class="mx-auto" id="idCat"></span>
                                 </div>
                                 <div class="col-sm-6 col-12 preview">
-                                    <span class="mx-auto preview" id="idTcount"></span>
+                                    <h6>No. of Tickets</h6>
+                                    <span class="mx-auto" id="idTcount"></span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="mb-5">
+                        <a class="mx-auto btn black btn-large btn-block text-white" style="width: 75% !important;" href="#">Submit</a>
                     </div>
                 </div>
             </div>
