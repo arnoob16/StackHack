@@ -447,7 +447,10 @@
                                           </div>
                                           <div class="row">
                                               <div class="input-field col s12">
-                                                  <a class="waves-effect waves-light btn-large btn-block black white-text modal-trigger" value="register" href="#modal1" onclick="genData()">Register Now</a>
+                                                <h6 class="text-center" style="margin-top: 5px !important;">
+                                                    <a class="text-center modal-trigger mt-4" href="#modal1" onclick="genData()" style="cursor: pointer;">Generate Preview</a>
+                                                </h6>
+                                                  <a class="waves-effect waves-light btn-large btn-block black white-text" value="register">Register Now</a>
                                                   <h6 class="text-center" style="margin-top: 5px !important;">
                                                       <a class="text-center mt-4" onclick="goBack();" style="cursor: pointer;">Go Back to Previous</a>
                                                   </h6>
@@ -463,46 +466,45 @@
         </div>
         <div class="my-auto">
             <div id="modal1" class="modal my-auto">
-                <div class="small">
-                    <h4 class="text-center m-2">Details Preview</h4>
-                    <div class="row ">
-                        <div class="col-12 my-auto preview">
-                            <img class="mx-auto" id="idImg">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col-12 preview">
-                                    <span class="mx-auto" id="idName"></span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-12 preview">
-                                    <h6>Email</h6>
-                                    <span class="mx-auto" id="idMail"></span>
-                                </div>
-                                <div class="col-sm-6 col-12 preview">
-                                    <h6>Phone</h6>
-                                    <span class="mx-auto" id="idPhone"></span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-12 preview">
-                                    <h6>Category</h6>
-                                    <span class="mx-auto" id="idCat"></span>
-                                </div>
-                                <div class="col-sm-6 col-12 preview">
-                                    <h6>No. of Tickets</h6>
-                                    <span class="mx-auto" id="idTcount"></span>
-                                </div>
+                <h4 class="text-center m-2 mt-5">Details Preview</h4>
+                <form method="POST" action="/submitData">
+                    <div class="small">
+                        <div class="row ">
+                            <div class="col-12 my-auto preview">
+                                <img class="mx-auto" id="idImg">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 preview">
+                                        <span class="mx-auto" id="idName"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-12 preview">
+                                        <h6>Email</h6>
+                                        <span class="mx-auto" id="idMail"></span>
+                                    </div>
+                                    <div class="col-sm-6 col-12 preview">
+                                        <h6>Phone</h6>
+                                        <span class="mx-auto" id="idPhone"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 col-12 preview">
+                                        <h6>Category</h6>
+                                        <span class="mx-auto" id="idCat"></span>
+                                    </div>
+                                    <div class="col-sm-6 col-12 preview">
+                                        <h6>No. of Tickets</h6>
+                                        <span class="mx-auto" id="idTcount"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-5">
-                        <a class="mx-auto btn black btn-large btn-block text-white" style="width: 75% !important;" href="#">Submit</a>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <div class="about container" id="about">
