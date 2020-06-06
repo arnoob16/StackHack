@@ -14,15 +14,31 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const methodOverride = require('method-override');
-var mongo = require("mongodb");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/registerapp");
-var db = mongoose.connection;
+
+
+
+
+ 
 
 
 
 //Init App
 const app = express();
+
+//moongoose connection
+
+mongoose.connect("mongodb://localhost/registerDB",{ useUnifiedTopology: true });
+
+const datasSchema = {
+
+
+    fname : String,
+    lname : String,
+    email : String,
+    phonename : Number, 
+
+};
 
 
 const intializePassport = require('./passport-config');
@@ -34,7 +50,6 @@ intializePassport(
 
 //Arrays
 const users = [];
-const registers = [];
 
 //View Engine
 
@@ -65,13 +80,84 @@ app.use(passport.session());
 app.use(methodOverride('_method'));
 
 app.get("/",function(req,res){
-    res.render("index.ejs");
+    res.set({ 
+        'Access-control-Allow-Origin': '*'
+        }); 
+     res.render('index.ejs'); 
+    
 });
+
+const Data = mongoose.model("Data",datasSchema)
+
+
+const data1 = new Data({
+
+    fname : "Subhradeep",
+    lname : "Nag",
+    email : "subhradeepnag@gmail.com",
+    phonename : 9898745813, 
+
+})
+const data2 = new Data({
+
+    fname : "Arnab",
+    lname : "Deep",
+    email : "arnab4srk@gmail.com",
+    phonename : 9898745814, 
+
+})
+const data3 = new Data({
+
+    fname : "Anurag",
+    lname : "Singh",
+    email : "yashusing@gmail.com",
+    phonename : 9898745815, 
+
+})
+
+const defaultData = [data1,data2,data3];
+
+Data.insertMany(defaultData,function(err){
+
+    if(err){
+    console.log(err);
+    }else{
+        console.log("Successfully saved items to database");
+        
+    }
+
+    
+
+
+})
+
+app.post('/register', function(req,res){ 
+    const first_name = req.body.fname; 
+    const last_name = req.body.name; 
+    const email =req.body.email; 
+    const phone =req.body.phonename; 
+  
+    const data = new Data({ 
+        first_name: first_name, 
+        last_name: last_name,
+        email:email,
+        phone:phone 
+    });
+
+    data.save();
+
+    res.redirect("/");
+
+
+});
+
+
 
 
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 });
+
 
 
 
