@@ -88,56 +88,52 @@ app.get("/",function(req,res){
 const Data = mongoose.model("Data",datasSchema)
 
 
-const data1 = new Data({
+// const data1 = new Data({
 
-    fname : "Subhradeep",
-    lname : "Nag",
-    email : "subhradeepnag@gmail.com",
-    phonename : 9898745813, 
+//     fname : "Subhradeep",
+//     lname : "Nag",
+//     email : "subhradeepnag@gmail.com",
+//     phonename : 9898745813, 
 
-})
-const data2 = new Data({
+// })
+// const data2 = new Data({
 
-    fname : "Arnab",
-    lname : "Deep",
-    email : "arnab4srk@gmail.com",
-    phonename : 9898745814, 
+//     fname : "Arnab",
+//     lname : "Deep",
+//     email : "arnab4srk@gmail.com",
+//     phonename : 9898745814, 
 
-})
-const data3 = new Data({
+// })
+// const data3 = new Data({
 
-    fname : "Anurag",
-    lname : "Singh",
-    email : "yashusing@gmail.com",
-    phonename : 9898745815, 
+//     fname : "Anurag",
+//     lname : "Singh",
+//     email : "yashusing@gmail.com",
+//     phonename : 9898745815, 
 
-})
+// })
 
-const defaultData = [data1,data2,data3];
+// const defaultData = [data1,data2,data3];
 
-Data.insertMany(defaultData,function(err){
+// Data.insertMany(defaultData,function(err){
 
-    if(err){
-    console.log(err);
-    }else{
-        console.log("Successfully saved items to database");
+//     if(err){
+//     console.log(err);
+//     }else{
+//         console.log("Successfully saved items to database");
         
-    }
-
-    
+//     }
 
 
-})
+// })
 
 app.post('/register', function(req,res){ 
-    const first_name = req.body.fname; 
-    const last_name = req.body.name; 
+    const name = req.body.name; 
     const email =req.body.email; 
-    const phone =req.body.phonename; 
+    const phone =req.body.phone; 
   
     const data = new Data({ 
-        first_name: first_name, 
-        last_name: last_name,
+        name:name,
         email:email,
         phone:phone 
     });
@@ -155,8 +151,6 @@ app.post('/register', function(req,res){
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 });
-
-
 
 
 app.post('/login',passport.authenticate('local', {
@@ -185,6 +179,8 @@ app.post("/signup",async(req,res) => {
     console.log(users);
     
 });
+
+
 
 app.post("/",function(req,res){
     const email = req.body.email;
