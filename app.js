@@ -80,20 +80,22 @@ app.use(passport.session());
 app.use(methodOverride('_method'));
 
 app.get("/",function(req,res){
-    res.set({ 
-        'Access-control-Allow-Origin': '*'
-        }); 
+     
      res.render('index.ejs'); 
     
 });
 
 const Data = mongoose.model("Data",datasSchema) 
 /*const data1 = new Data({
+const Data = mongoose.model("Data",datasSchema)
 
-    fname : "Subhradeep",
-    lname : "Nag",
-    email : "subhradeepnag@gmail.com",
-    phonename : 9898745813, 
+
+// const data1 = new Data({
+
+//     fname : "Subhradeep",
+//     lname : "Nag",
+//     email : "subhradeepnag@gmail.com",
+//     phonename : 9898745813, 
 
 })
 const data2 = new Data({
@@ -103,17 +105,27 @@ const data2 = new Data({
     phonename : 9898745814, 
 })
 const data3 = new Data({
+// })
+// const data2 = new Data({
 
-    fname : "Anurag",
-    lname : "Singh",
-    email : "yashusing@gmail.com",
-    phonename : 9898745815, 
+//     fname : "Arnab",
+//     lname : "Deep",
+//     email : "arnab4srk@gmail.com",
+//     phonename : 9898745814, 
 
-})
+// })
+// const data3 = new Data({
 
-const defaultData = [data1,data2,data3];
+//     fname : "Anurag",
+//     lname : "Singh",
+//     email : "yashusing@gmail.com",
+//     phonename : 9898745815, 
 
-Data.insertMany(defaultData,function(err){
+// })
+
+// const defaultData = [data1,data2,data3];
+
+// Data.insertMany(defaultData,function(err){
 
     if(err){
     console.log(err);
@@ -129,9 +141,24 @@ app.post('/', function(req,res){
     const phone =req.body.phonename; 
     console.log("POST Method Initiated");
     console.log(first_name, last_name, email, phone);
+});
+//     if(err){
+//     console.log(err);
+//     }else{
+//         console.log("Successfully saved items to database");
+        
+//     }
+
+
+// })
+
+app.post('/register', function(req,res){ 
+    const name = req.body.name; 
+    const email =req.body.email; 
+    const phone =req.body.phone; 
+  
     const data = new Data({ 
-        first_name: first_name, 
-        last_name: last_name,
+        name:name,
         email:email,
         phone:phone 
     });
@@ -142,6 +169,7 @@ app.post('/', function(req,res){
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 });
+
 
 app.post('/login',passport.authenticate('local', {
     successRedirect: '/',
@@ -170,6 +198,8 @@ app.post("/signup",async(req,res) => {
     console.log(users);    
 });
 
+
+
 app.post("/",function(req,res){
     const email = req.body.email;
     const data={
@@ -188,9 +218,9 @@ app.post("/",function(req,res){
     }
   const request =  https.request(url,options,function(response){
     if(res.statusCode == 200){
-        res.sendFile(__dirname + "/success.html")
+        res.render('success.ejs');
     }else{
-        res.sendFile(__dirname + "/failure.html")
+        res.render('failure.ejs');
     }
        response.on("data",function(data){
            console.log(JSON.parse(data));  
@@ -199,6 +229,13 @@ app.post("/",function(req,res){
     request.write(jsonData);
     request.end();
 });
+
+app.post("/success",function(req,res){
+    res.redirect("/")
+})
+app.post("/failure",function(req,res){
+    res.redirect("/")
+})
 
 app.delete('/logout',(req,res)=>{
     req.logOut()
