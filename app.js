@@ -87,10 +87,8 @@ app.get("/",function(req,res){
     
 });
 
-const Data = mongoose.model("Data",datasSchema)
-
-
-const data1 = new Data({
+const Data = mongoose.model("Data",datasSchema) 
+/*const data1 = new Data({
 
     fname : "Subhradeep",
     lname : "Nag",
@@ -99,12 +97,10 @@ const data1 = new Data({
 
 })
 const data2 = new Data({
-
     fname : "Arnab",
     lname : "Deep",
     email : "arnab4srk@gmail.com",
     phonename : 9898745814, 
-
 })
 const data3 = new Data({
 
@@ -122,55 +118,42 @@ Data.insertMany(defaultData,function(err){
     if(err){
     console.log(err);
     }else{
-        console.log("Successfully saved items to database");
-        
+        console.log("Successfully saved items to database");   
     }
-
-    
-
-
 })
-
-app.post('/register', function(req,res){ 
+*/
+app.post('/', function(req,res){ 
     const first_name = req.body.fname; 
     const last_name = req.body.name; 
     const email =req.body.email; 
     const phone =req.body.phonename; 
-  
+    console.log("POST Method Initiated");
+    console.log(first_name, last_name, email, phone);
     const data = new Data({ 
         first_name: first_name, 
         last_name: last_name,
         email:email,
         phone:phone 
     });
-
     data.save();
-
     res.redirect("/");
-
-
 });
-
-
-
 
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 });
-
-
-
 
 app.post('/login',passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
   }));
-app.get("/signup",(req,res)=>{
+
+  app.get("/signup",(req,res)=>{
     res.render("signup.ejs");
 }); 
-app.post("/signup",async(req,res) => {
 
+app.post("/signup",async(req,res) => {
     try{
         const hashedPassword = await bcrypt.hash(req.body.password,10)
         users.push({
@@ -184,13 +167,11 @@ app.post("/signup",async(req,res) => {
     }catch{
         res.redirect("/signup");
     }
-    console.log(users);
-    
+    console.log(users);    
 });
 
 app.post("/",function(req,res){
     const email = req.body.email;
-
     const data={
         members:[
             {
@@ -199,31 +180,24 @@ app.post("/",function(req,res){
             }
         ]
     };
-
-
     const jsonData = JSON.stringify(data);
     const url = "https://us19.api.mailchimp.com/3.0/lists/a86b6611d6"
     const options ={
         method: "POST",
         auth:"sonu:6d0d84618941115a34518fe74e99568b-us19"
     }
-
   const request =  https.request(url,options,function(response){
-
     if(res.statusCode == 200){
         res.sendFile(__dirname + "/success.html")
     }else{
         res.sendFile(__dirname + "/failure.html")
     }
        response.on("data",function(data){
-           console.log(JSON.parse(data));
-           
+           console.log(JSON.parse(data));  
        })
-        
     })
     request.write(jsonData);
     request.end();
-
 });
 
 app.delete('/logout',(req,res)=>{
@@ -248,7 +222,6 @@ app.delete('/logout',(req,res)=>{
 
 app.listen(3000,function(){
     console.log("Server is running on port 3000");
-    
 });
 
 //  API key
