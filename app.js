@@ -80,9 +80,7 @@ app.use(passport.session());
 app.use(methodOverride('_method'));
 
 app.get("/",function(req,res){
-    res.set({ 
-        'Access-control-Allow-Origin': '*'
-        }); 
+     
      res.render('index.ejs'); 
     
 });
@@ -211,9 +209,9 @@ app.post("/",function(req,res){
   const request =  https.request(url,options,function(response){
 
     if(res.statusCode == 200){
-        res.sendFile(__dirname + "/success.html")
+        res.render('success.ejs');
     }else{
-        res.sendFile(__dirname + "/failure.html")
+        res.render('failure.ejs');
     }
        response.on("data",function(data){
            console.log(JSON.parse(data));
@@ -225,6 +223,13 @@ app.post("/",function(req,res){
     request.end();
 
 });
+
+app.post("/success",function(req,res){
+    res.redirect("/")
+})
+app.post("/failure",function(req,res){
+    res.redirect("/")
+})
 
 app.delete('/logout',(req,res)=>{
     req.logOut()
